@@ -1,0 +1,83 @@
+@import "../function/elcheck.scss";
+
+// 构建最外层类 coordx-[block]
+@mixin b($block) {
+  $B: $--namespace + "-" + $block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
+
+// 构建内部元素类 coordx-[block]__[element]
+@mixin e($element) {
+  $E: $element !global;
+  $selector: &;
+  $currentSelector: "";
+
+  @each $unit in $element {
+    $currentSelector: #{$currentSelector + "." + $B + $--element-separator + $unit + ","};
+  }
+
+  @if hitAllSpecialNestRule($selector) {
+    @at-root {
+      #{$selector} {
+        #{$currentSelector} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
+    }
+  }
+}
+
+// 构建修饰类 &--[modifier]
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + $--modifier-separator + $unit + ","};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+// 构建状态类 &.is-[state]
+@mixin when($state) {
+  @at-root {
+    &.#{$--state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+// 构建一个含占位符 %shared- 的类，不会编译为css，仅用于继承
+@mixin share-rule($name) {
+  $rule-name: "%shared-" + $name;
+
+  @at-root #{$rule-name} {
+    @content;
+  }
+}
+
+// 实现继承
+@mixin extend-rule($name) {
+  @extend #{"%shared-" + $name};
+}
+
+// 伪类
+@mixin pseudo($pseudo) {
+  @at-root #{&}#{":#{$pseudo}"} {
+    @content;
+  }
+}

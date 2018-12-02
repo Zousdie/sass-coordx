@@ -1,0 +1,20 @@
+{
+  "name": "sass-coordx",
+  "version": "0.1.0",
+  "description": "Sass basic toolbox",
+  "main": "src/index.scss",
+  "author": "Jialiang T. (rememhe@outlook.com)",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "toolbox"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zousdie/sass-coordx.git"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
