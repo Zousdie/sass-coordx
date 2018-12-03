@@ -1,0 +1,5 @@
+$--draft-width: 750 !default;
+
+@function px2vw($px, $draft-width: $--draft-width) {
+  @return #{$px / 750}vw;
+}

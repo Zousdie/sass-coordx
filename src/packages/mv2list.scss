@@ -1,0 +1,18 @@
+// 将map的每个值转换为list
+@function convertValueList($map, $count) {
+  $result: ();
+  @each $k, $v in $map {
+    $list: $v;
+
+    @for $i from 1 to $count {
+      $list: append($list, $v);
+    }
+    $result: map-merge(
+      $result,
+      (
+        $k: $list
+      )
+    );
+  }
+  @return $result;
+}
