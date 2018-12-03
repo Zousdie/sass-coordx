@@ -1,4 +1,4 @@
-@import "../var/breakpoint.scss";
+@import "config";
 
 @mixin res($key, $map: $--res-breakpoints) {
   @if map-has-key($map, $key) {
@@ -15,6 +15,16 @@
     @include res($bkpoint, $breakpoints) {
       @for $i from 1 through length($value) {
         #{nth($list, $i)}: #{nth($value, $i)};
+      }
+    }
+  }
+}
+
+.hidden {
+  @each $break-point-name, $value in $--res-breakpoints-spec {
+    &-#{$break-point-name} {
+      @include res($break-point-name, $--res-breakpoints-spec) {
+        display: none !important;
       }
     }
   }

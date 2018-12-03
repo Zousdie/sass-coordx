@@ -1,12 +1,13 @@
-@import "../var/config.scss";
+@import "config";
 
+// 转换为字符串
 @function selectorToString($selector) {
   $selector: inspect($selector);
   $selector: str-slice($selector, 2, -2);
   @return $selector;
 }
 
-// 包含 $--modifier-separator (默认：--)
+// 检查 modifier, 包含 $--modifier-separator (默认：--)
 @function containModifier($selector) {
   $selector: selectorToString($selector);
 
@@ -17,7 +18,7 @@
   }
 }
 
-// 包含 $--state-prefix (默认：is-)
+// 检查 state, 包含 $--state-prefix (默认：is-)
 @function containWhenFlag($selector) {
   $selector: selectorToString($selector);
 
@@ -28,7 +29,7 @@
   }
 }
 
-// 包含 :
+// 检查伪类，包含 :
 @function containPseudoClass($selector) {
   $selector: selectorToString($selector);
 

@@ -1,0 +1,30 @@
+@mixin clear($d: both) {
+  &::after {
+    content: "";
+    clear: $d;
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+  }
+}
+
+@mixin pointer {
+  cursor: pointer;
+}
+
+@mixin ul-no-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @content;
+}
+
+.pointer {
+  @include pointer;
+}
+
+.clear {
+  @include clear;
+}

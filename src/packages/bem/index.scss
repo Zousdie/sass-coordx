@@ -1,6 +1,10 @@
-@import "../function/elcheck.scss";
+/*
+ * from Watson@waynecz https://github.com/waynecz/Watson/blob/master/src/packages/_BEM.scss
+ */
 
-// 构建最外层类 coordx-[block]
+@import "function";
+
+// B
 @mixin b($block) {
   $B: $--namespace + "-" + $block !global;
 
@@ -9,7 +13,7 @@
   }
 }
 
-// 构建内部元素类 coordx-[block]__[element]
+// E
 @mixin e($element) {
   $E: $element !global;
   $selector: &;
@@ -36,7 +40,7 @@
   }
 }
 
-// 构建修饰类 &--[modifier]
+// M
 @mixin m($modifier) {
   $selector: &;
   $currentSelector: "";
@@ -52,7 +56,7 @@
   }
 }
 
-// 构建状态类 &.is-[state]
+// State
 @mixin when($state) {
   @at-root {
     &.#{$--state-prefix + $state} {
@@ -61,7 +65,14 @@
   }
 }
 
-// 构建一个含占位符 %shared- 的类，不会编译为css，仅用于继承
+// 伪类
+@mixin pseudo($pseudo) {
+  @at-root #{&}#{":#{$pseudo}"} {
+    @content;
+  }
+}
+
+// 构建一个含占位符 %shared- 的类，不会被编译为css，仅用于实现继承
 @mixin share-rule($name) {
   $rule-name: "%shared-" + $name;
 
@@ -70,14 +81,7 @@
   }
 }
 
-// 实现继承
+// 实现 extend
 @mixin extend-rule($name) {
   @extend #{"%shared-" + $name};
-}
-
-// 伪类
-@mixin pseudo($pseudo) {
-  @at-root #{&}#{":#{$pseudo}"} {
-    @content;
-  }
 }
