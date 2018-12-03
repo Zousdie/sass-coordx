@@ -1,6 +1,7 @@
-@import "./packages/bem/index";
-@import "./packages/res/index";
+@import "./packages/bem/index.scss";
+@import "./packages/res/index.scss";
 
+@import "./packages/border.scss";
 @import "./packages/comm.scss";
 @import "./packages/middle.scss";
 @import "./packages/mv2list.scss";

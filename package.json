@@ -7,10 +7,10 @@
   "license": "MIT",
   "keywords": [
     "css",
-    "bem",
-    "mixins",
     "sass",
     "scss",
+    "mixins",
+    "BEM",
     "toolbox"
   ],
   "repository": {

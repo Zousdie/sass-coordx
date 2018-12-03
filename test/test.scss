@@ -1,0 +1,22 @@
+$--namespace: "te";
+// $--sm: 500px;
+
+@import "../src/coordx.scss";
+
+@include b(demo) {
+  display: flex;
+
+  @include arrow(top, #000, px2vw(20));
+
+  @include e(inner) {
+    margin-right: px2vw(75);
+
+    @include m(sccuess) {
+      color: green;
+    }
+  }
+
+  @include when(disabled) {
+    cursor: not-allowed;
+  }
+}
