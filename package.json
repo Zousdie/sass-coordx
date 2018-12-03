@@ -1,0 +1,25 @@
+{
+  "name": "sass-coordx",
+  "version": "0.1.0",
+  "description": "Sass basic toolbox",
+  "main": "src/coordx.scss",
+  "author": "Jialiang T. (rememhe@outlook.com)",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "scss",
+    "mixins",
+    "BEM",
+    "toolbox"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zousdie/sass-coordx.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

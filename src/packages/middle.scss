@@ -1,0 +1,10 @@
+@mixin absolute-middle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin inline-flex-middle {
+  display: inline-flex;
+  align-items: center;
+}
