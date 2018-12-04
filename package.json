@@ -1,6 +1,6 @@
 {
   "name": "sass-coordx",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Sass basic toolbox",
   "main": "src/_coordx.scss",
   "author": "Jialiang T. (rememhe@outlook.com)",
