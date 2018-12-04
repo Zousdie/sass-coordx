@@ -2,7 +2,7 @@
   "name": "sass-coordx",
   "version": "0.1.1",
   "description": "Sass basic toolbox",
-  "main": "src/coordx.scss",
+  "main": "src/_coordx.scss",
   "author": "Jialiang T. (rememhe@outlook.com)",
   "license": "MIT",
   "keywords": [
