@@ -19,13 +19,3 @@
     }
   }
 }
-
-.hidden {
-  @each $break-point-name, $value in $--res-breakpoints-spec {
-    &-#{$break-point-name} {
-      @include res($break-point-name, $--res-breakpoints-spec) {
-        display: none !important;
-      }
-    }
-  }
-}

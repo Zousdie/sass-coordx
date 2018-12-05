@@ -1,0 +1,18 @@
+@import "packages/comm";
+@import "packages/bem/index";
+
+@include share-rule(pointer) {
+  @include pointer;
+}
+
+@include share-rule(clear) {
+  @include clear;
+}
+
+.pointer {
+  @include pointer;
+}
+
+.clear {
+  @include clear;
+}

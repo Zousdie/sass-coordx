@@ -1,7 +1,9 @@
 $--namespace: "te";
 // $--sm: 500px;
 
-@import "../src/coordx.scss";
+@import "../src/coordx";
+@import "../src/comm";
+@import "../src/hidden";
 
 @include b(demo) {
   display: flex;
@@ -19,4 +21,14 @@ $--namespace: "te";
   @include when(disabled) {
     cursor: not-allowed;
   }
+}
+
+.demo2 {
+  @include extend-rule(pointer);
+  @include extend-rule(clear);
+}
+
+.demo3 {
+  @include extend-rule(pointer);
+  @include extend-rule(clear);
 }
