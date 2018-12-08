@@ -1,0 +1,14 @@
+@import "../../src/comm";
+
+.demo1 {
+  @include extend-rule(pointer);
+  @include extend-rule(clear);
+}
+
+.demo2 {
+  @include extend-rule(pointer);
+}
+
+.demo3 {
+  @include extend-rule(clear);
+}
