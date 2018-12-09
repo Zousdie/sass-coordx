@@ -1,0 +1,21 @@
+// Overwrite variables before import res modules
+$--sm: 600px;
+$--md: 800px;
+
+@import "../../src/packages/res/index";
+
+/*
+ * res
+ ----------------------------------------------------------------------------- */
+.res-demo {
+  @include resl(
+    (
+      "xs": 1px 100px blue,
+      "sm": 2px 200px,
+      "md": null 300px,
+      "lg": 4px,
+      "xl": null null red
+    ),
+    font-size line-height color
+  );
+}

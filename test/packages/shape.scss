@@ -1,0 +1,31 @@
+@import "../../src/packages/shape";
+
+div {
+  margin: 20px auto;
+  background-color: #d8bd26;
+  @include size(200px);
+}
+
+.demo {
+  @include size(100px, 200px);
+}
+
+.demo-circle {
+  @include circle(100px, blue);
+}
+
+.demo-triangle {
+  background-color: transparent;
+  @include triangle(top, #f00, 100px);
+}
+
+.demo-arrow-right {
+  position: relative;
+  background-color: #00f;
+
+  @include arrow(right, #000, 80px) {
+    right: 0;
+    top: 50%;
+    transform: translate(100%, -50%);
+  }
+}
