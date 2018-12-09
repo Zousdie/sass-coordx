@@ -1,6 +1,16 @@
 @import "config";
 
-@mixin res($key, $map: $--res-breakpoints) {
+@function merge() {
+  $breaklist: ();
+
+  $breaklist: map-merge($breaklist, $--res-breakpoints);
+  $breaklist: map-merge($breaklist, $--res-breakpoints-spec);
+  $breaklist: map-merge($breaklist, $--res-breakpoints-orientation);
+
+  @return $breaklist;
+}
+
+@mixin res($key, $map: merge()) {
   @if map-has-key($map, $key) {
     @media only screen and (#{map-get($map, $key)}) {
       @content;
@@ -10,9 +20,9 @@
   }
 }
 
-@mixin resl($sy-map, $list, $breakpoints: $--res-breakpoints) {
-  @each $bkpoint, $value in $sy-map {
-    @include res($bkpoint, $breakpoints) {
+@mixin resl($style-map, $list, $map: merge()) {
+  @each $bkpoint, $value in $style-map {
+    @include res($bkpoint, $map) {
       @for $i from 1 through length($value) {
         #{nth($list, $i)}: #{nth($value, $i)};
       }

@@ -1,18 +1,10 @@
-/* Responsive breakpoint
- * xs 0 - 575
- * sm 576 - 767
- * md 768 - 991
- * lg 992 - 1199
- * xl 1200 - Inf
- ----------------------------------------------------------------------------- */
-
 $--sm: 576px !default;
 $--md: 768px !default;
 $--lg: 992px !default;
 $--xl: 1200px !default;
 
 $--res-breakpoints: (
-  "xs": "max-width: #{$--sm}",
+  "xs": "max-width: #{$--sm - 1}",
   "sm": "min-width: #{$--sm}",
   "md": "min-width: #{$--md}",
   "lg": "min-width: #{$--lg}",
@@ -37,3 +29,11 @@ $--res-breakpoints-orientation: (
   "landscape": "orientation: landscape",
   "portrait": "orientation: portrait"
 ) !default;
+
+/* Responsive breakpoint map
+ * xs: 0 - #{$--sm - 1}
+ * sm: #{$--sm} - #{$--md - 1}
+ * md: #{$--md} - #{$--lg - 1}
+ * lg: #{$--lg} - #{$--xl - 1}
+ * xl: #{$--xl} - Inf
+ ----------------------------------------------------------------------------- */
