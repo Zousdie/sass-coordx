@@ -1,0 +1,56 @@
+// Overwrite variables before import res modules
+$--sm: 500px;
+$--md: 700px;
+
+@import "../../src/packages/res/index";
+
+/*
+ * orientation
+ ----------------------------------------------------------------------------- */
+.orientation-demo {
+  @include res("landscape") {
+    font-size: 14px;
+  }
+
+  @include res("portrait") {
+    font-size: 16px;
+  }
+
+  @include resl(
+    (
+      "landscape": 10px,
+      "portrait": 20px
+    ),
+    margin
+  );
+}
+
+/*
+ * res
+ ----------------------------------------------------------------------------- */
+.res-demo {
+  @include resl(
+    (
+      "xs": 1px 100px blue,
+      "sm": 2px 200px,
+      "md": null 300px,
+      "lg": 4px,
+      "xl": null null red
+    ),
+    font-size line-height color
+  );
+}
+
+/*
+ * error
+ ----------------------------------------------------------------------------- */
+.error-demo {
+  @include res(
+    "haha",
+    (
+      "haha": "min-width: #{$--xl + 100}"
+    )
+  ) {
+    color: red;
+  }
+}

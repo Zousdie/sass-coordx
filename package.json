@@ -18,8 +18,10 @@
     "url": "https://github.com/Zousdie/sass-coordx.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node-sass -w -r test/packages -o test/out --output-style expanded"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "node-sass": "^4.10.0"
+  }
 }

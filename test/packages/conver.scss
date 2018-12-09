@@ -1,0 +1,11 @@
+@import "../../src/packages/px2vw";
+
+$--draft-width: 1000;
+
+.demo {
+  font-size: px2vw(100);
+}
+
+.demo2 {
+  font-size: px2vw(100, 500);
+}
