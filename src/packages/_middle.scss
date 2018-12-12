@@ -8,3 +8,16 @@
   display: inline-flex;
   align-items: center;
 }
+
+@mixin pseudo-vertical-middle {
+  $sel: &;
+
+  @at-root {
+    #{$sel}::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+  }
+}
